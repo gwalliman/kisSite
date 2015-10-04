@@ -60,7 +60,7 @@ try
     echo ' | ';
     echo $row['subject'];
     echo ' | ';
-    echo '<input name="listnerName" type="textfield" value="'. $listenerName . '">';
+    echo '<input name="listenerName" type="textfield" value="'. $listenerName . '">';
     echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
     echo '</li>';
