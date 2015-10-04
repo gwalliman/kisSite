@@ -8,12 +8,12 @@ $pass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
 try
 {
   $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
-  echo($result . '<br />');
-  echo($_GET['listener'] . '<br />');
-  echo($_GET['rating'] . '<br />');
+  echo('DB: ' . $db . '<br />');
+  echo('Listener: ' . $_GET['listener'] . '<br />');
+  echo('Rating: ' . $_GET['rating'] . '<br />');
 
   $result = pg_exec($db, "select * from ratings");
-  echo($result);
+  echo('Results: ' . $result);
 
 }
 catch(Exception $e)
