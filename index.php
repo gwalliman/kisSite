@@ -44,31 +44,38 @@
 		<form id="tellStory" action="index.php" class="messageBox center hidden">
 			Tell us your story
 			<textarea name="txtStory" id="txtStory" class="center"></textarea>
-			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bGrey txtWhite">
 		</form>
 		
 		<div id="signInOrReg" class="messageBox center hidden">
-			<div id="toSignUp" class="button2 bBlue">Sign Up</div>
-			<div>OR</div>
-			<div id="toSignIn" class="button2 bBlue">Sign In</div>
+			<div class="vSpace"></div>
+			<div id="toSignUp" class="button2 bGrey center">Sign Up</div>
+			<div class="vSpace"></div>
+			<div class="textCenter" style="width:100%">OR</div>
+			<div class="vSpace"></div>
+			<div id="toSignIn" class="button2 bGrey center">Sign In</div>
+			<div class="vSpace"></div>
 		</div>
 		
 		<form id="listenerSignUp" action="index.php" method="get" class="messageBox center hidden">
 			Register as a Listener
-			<input name="listenerEmail" id="listenerEmail" class="bGrey" placeholder="Email">
-			<input name="listenerUserName" id="listenerUserName" class="bGrey" placeholder="Username">
-			<input name="listenerPassword" id="listenerPassword" type="password" class="bGrey" placeholder="Password">
+			<input name="listenerEmail" id="listenerEmail" placeholder="Email">
+			<input name="listenerUserName" id="listenerUserName" placeholder="Username">
+			<input name="listenerPassword" id="listenerPassword" type="password" placeholder="Password">
 			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
-			<input name="submitSignUp" id="submitSignUp" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitSignUp" id="submitSignUp" type="submit" value="Submit" class="submit bGrey txtWhite">
 		</form>
 		
 		<form id="listenerSignIn" action="chatListener.php" method="get" class="messageBox center hidden">
 			Listener Sign-in
-			<input name="listenerUserNameSignIn" id="listenerUserNameSignIn" class="bGrey" placeholder="Username">
-			<input name="listenerPasswordSignIn" id="listenerPasswordSignIn" class="bGrey" placeholder="Password">
+			<input name="listenerUserNameSignIn" id="listenerUserNameSignIn" placeholder="Username">
+			<input name="listenerPasswordSignIn" id="listenerPasswordSignIn" placeholder="Password">
 			<a href="">(Forgot password?)</a>
-			<input name="submitSignIn" id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitSignIn" id="submitSignIn" type="submit" value="Submit" class="submit bGrey txtWhite">
 		</form>
+	
+	<div id="feedback" class="button2 bGrey center">Feedback</div>
+	<div class="stopFloat"></div>
 	</div>
 	
 <?php
