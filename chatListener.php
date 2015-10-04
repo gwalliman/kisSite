@@ -103,7 +103,7 @@ try
 	echo '</table>';
   if($row_num == 0)
   {
-    echo '<div class='empty'>There are no clients waiting to chat</div>';
+    echo '<div class="empty">There are no clients waiting to chat</div>';
   }
 }
 catch(Exception $e)
