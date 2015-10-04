@@ -11,7 +11,8 @@
     $id = mt_rand(100000, 999999);
     $result = pg_prepare($db, "tellQuery", "INSERT INTO clients (id, subject) VALUES ($1, $2)");
     $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
-    header("Location: ./chatStoryTeller.php");
+    //header("Location: ./chatStoryTeller.php");
+    header("Location: https://kis-chatroom.herokuapp.com/chat/$id");
   }
   else if(isset($_REQUEST['submitSignUp']))
   {
@@ -23,10 +24,11 @@
     echo('ListenerPassword: ' . $_GET['listenerPassword'] . '<br />');
     $result = pg_prepare($db, "listenSignUp", "INSERT INTO listener (name, pass, email) VALUES ($1, $2, $3)");
     $result = pg_execute($db, "listenSignUp", array($_GET['listenerUserName'], $_GET['listenerPassword'], $_GET['listenerEmail']));
-    header("Location: ./chatListener.php");
+    header("Location: ./chatListener.php?username=" . $_GET['listenerUserName']);
   }
   else if(isset($_REQUEST['submitSignIn']))
   {
+    header("Location: ./chatListener.php?username=" . $_GET['listenerUserNameSignIn']);
   }
 
 ?>
