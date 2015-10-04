@@ -20,7 +20,7 @@ if($launchedId != '')
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
   $result = pg_prepare($db, 'removeQuery', "DELETE FROM clients WHERE id = '$1'");
   echo('RESULT 1: ' . $result);
-  $result = pg_exec($db, 'removeQuery', array($launchedId));
+  $result = pg_execute($db, 'removeQuery', array($launchedId));
   echo('RESULT 2: ' . $result);
 
   //Insert chatconnection row
