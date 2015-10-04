@@ -7,6 +7,18 @@ include 'header_operationKiS.php';
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+  $id = $_GET['ratingId'];
+
+  $select_query = "SELECT * FROM connectedchat WHERE id = $id";
+  $result = pg_query($db, $select_query);
+  while($row = pg_fetch_array($result))
+  {
+    echo('ROW: ' . $row);
+  }
+
+  /*$result = pg_prepare($db, "tellQuery", "INSERT INTO  (id, subject) VALUES ($1, $2)");
+  $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
+  header("Location: https://kis-chatroom.herokuapp.com/chat/$id");*/
 }
 catch(Exception $e)
 {
