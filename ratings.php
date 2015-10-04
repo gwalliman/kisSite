@@ -7,16 +7,16 @@ include 'header_operationKiS.php';
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db);
+  echo('DB: ' . $db . "<br />");
   $id = $_GET['ratingId'];
-  echo('ID: ' . $id);
+  echo('ID: ' . $id . "<br />");
 
-  $select_query = "SELECT * FROM connectedchat WHERE id = $id";
+  $select_query = "SELECT * FROM connectedchat WHERE id = '$id'";
   $result = pg_query($db, $select_query);
-  echo('RESULT: ' . $result);
+  echo('RESULT: ' . $result . "<br />");
   while($row = pg_fetch_array($result))
   {
-    echo('ROW: ' . $row);
+    echo('ROW: ' . $row . "<br />");
   }
 
   /*$result = pg_prepare($db, "tellQuery", "INSERT INTO  (id, subject) VALUES ($1, $2)");
