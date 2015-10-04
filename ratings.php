@@ -6,22 +6,30 @@ include 'header_operationKiS.php';
 <?php
 try
 {
-  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db . "<br />");
-  $id = $_GET['ratingId'];
-  echo('ID: ' . $id . "<br />");
-
-  $select_query = "SELECT * FROM connectedchat WHERE id = '$id'";
-  $result = pg_query($db, $select_query);
-  echo('RESULT: ' . $result . "<br />");
-  while($row = pg_fetch_array($result))
+  if(isset($_REQUEST['submitRating']))
   {
-    echo('ROW: ' . $row . "<br />");
-  }
+    $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+    echo('DB: ' . $db . "<br />");
+    $id = $_GET['ratingId'];
+    echo('ID: ' . $id . "<br />");
 
-  /*$result = pg_prepare($db, "tellQuery", "INSERT INTO  (id, subject) VALUES ($1, $2)");
-  $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
-  header("Location: https://kis-chatroom.herokuapp.com/chat/$id");*/
+    $select_query = "SELECT * FROM connectedchat WHERE id = '$id'";
+    $result = pg_query($db, $select_query);
+    echo('RESULT: ' . $result . "<br />");
+    $name = '';
+    while($row = pg_fetch_array($result))
+    {
+      $name = $row['listenername'];
+      echo('ROW: ' . $row['listenername'] . "<br />");
+    }
+    echo('NAME: ' . $name . "<br />");
+    $rating = $_GET['ratingNum'];
+    
+    $result = pg_prepare($db, "insertQuery", "INSERT INTO ratings (listener, rating) VALUES ($1, $2)");
+    $result = pg_execute($db, "insertQuery", array($name, $rating));
+    echo('RESULT: ' . $result . "<br />");
+    header("Location: https://kis-website.herokuapp.com/");
+  }
 }
 catch(Exception $e)
 {
@@ -40,7 +48,7 @@ catch(Exception $e)
         <option value="5">5</option>
       </select>
       <input name="ratingId" id="ratingId" type="text" value="<?php echo $_GET['id']; ?>">
-			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitRating" id="submitRating" type="submit" value="Submit" class="submit bBlue">
 		</form>
 	</div>
 
