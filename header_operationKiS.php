@@ -13,5 +13,5 @@
 
 <body>
 	<div id="teamName" class="bGrey">
-		Operation KiS
+    Kindness of Strangers
 	</div>

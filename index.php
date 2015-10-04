@@ -42,7 +42,7 @@
 		
 		<!--<form id="tellStory" action="chatStoryTeller.php" class="messageBox center hidden">-->
 		<form id="tellStory" action="index.php" class="messageBox center hidden textCenter">
-			Tell us your story
+      Tell us what you want to talk about
 			<div class="vSpace"></div>
 			<textarea name="txtStory" id="txtStory" class="center"></textarea>
 			<div class="vSpace"></div>
