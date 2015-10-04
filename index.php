@@ -44,7 +44,7 @@
 		<!--<form id="tellStory" action="chatStoryTeller.php" class="messageBox center hidden">-->
 		<form id="tellStory" action="index.php" class="messageBox center hidden">
 			Tell us your story
-			<textarea name="txtStory" id="txtStory" class="bGrey center"></textarea>
+			<textarea name="txtStory" id="txtStory" class="center"></textarea>
 			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
