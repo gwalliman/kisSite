@@ -28,6 +28,10 @@
   background-color: #CCC;
 }
 
+span.stars {
+  margin: 0px auto;
+}
+
 span.stars, span.stars span {
     display: block;
     background: url(stars.png) 0 -16px repeat-x;
