@@ -50,14 +50,15 @@
 			color:#ffffff;
 			text-align:center;
 		}
-
+		
 #txtStory {
 			width:90%;
 			height:200px;
 		}
 
-input {
-		margin:2%;
+input[type="text"] {
+		/*margin:2%;*/
+		width:100%;
 		display:block;
 	}
 
@@ -113,5 +114,8 @@ input {
 }
 
 .vSpace{
-	height:3%;
+height:5px;
+}
+.inputGroup{
+width:50%;
 }

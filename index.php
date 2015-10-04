@@ -41,10 +41,13 @@
 		</div>
 		
 		<!--<form id="tellStory" action="chatStoryTeller.php" class="messageBox center hidden">-->
-		<form id="tellStory" action="index.php" class="messageBox center hidden">
+		<form id="tellStory" action="index.php" class="messageBox center hidden textCenter">
 			Tell us your story
+			<div class="vSpace"></div>
 			<textarea name="txtStory" id="txtStory" class="center"></textarea>
+			<div class="vSpace"></div>
 			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bGrey txtWhite">
+			<div class="vSpace"></div>
 		</form>
 		
 		<div id="signInOrReg" class="messageBox center hidden">
@@ -58,24 +61,41 @@
 		</div>
 		
 		<form id="listenerSignUp" action="index.php" method="get" class="messageBox center hidden">
-			Register as a Listener
-			<input name="listenerEmail" id="listenerEmail" placeholder="Email">
-			<input name="listenerUserName" id="listenerUserName" placeholder="Username">
-			<input name="listenerPassword" id="listenerPassword" type="password" placeholder="Password">
-			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
-			<input name="submitSignUp" id="submitSignUp" type="submit" value="Submit" class="submit bGrey txtWhite">
+			<div class="inputGroup center textCenter">
+				Register as a Listener
+				<div class="vSpace"></div>
+				<input type="text" name="listenerEmail" id="listenerEmail" placeholder="Email">
+				<div class="vSpace"></div>
+				<input type="text" name="listenerUserName" id="listenerUserName" placeholder="Username">
+				<div class="vSpace"></div>
+				<input type="text" name="listenerPassword" id="listenerPassword" type="password" placeholder="Password">
+				<div class="vSpace"></div>
+				<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
+				<div class="vSpace"></div>
+				<input name="submitSignUp" id="submitSignUp" type="submit" value="Submit" class="submit bGrey txtWhite">
+				<div class="vSpace"></div>
+			</div>
 		</form>
 		
 		<form id="listenerSignIn" action="chatListener.php" method="get" class="messageBox center hidden">
-			Listener Sign-in
-			<input name="listenerUserNameSignIn" id="listenerUserNameSignIn" placeholder="Username">
-			<input name="listenerPasswordSignIn" id="listenerPasswordSignIn" placeholder="Password">
-			<a href="">(Forgot password?)</a>
-			<input name="submitSignIn" id="submitSignIn" type="submit" value="Submit" class="submit bGrey txtWhite">
+			<div class="inputGroup center textCenter">
+				Listener Sign-in
+				<div class="vSpace"></div>
+				<input name="listenerUserNameSignIn" id="listenerUserNameSignIn" placeholder="Username">
+				<div class="vSpace"></div>
+				<input name="listenerPasswordSignIn" id="listenerPasswordSignIn" placeholder="Password">
+				<div class="vSpace"></div>
+				<a href="">(Forgot password?)</a>
+				<div class="vSpace"></div>
+				<input name="submitSignIn" id="submitSignIn" type="submit" value="Submit" class="submit bGrey txtWhite">
+				<div class="vSpace"></div>
+			</div>
 		</form>
+		<div class="stopFloat"></div>
 	
-	<div id="feedback" class="button2 bGrey center">Feedback</div>
-	<div class="stopFloat"></div>
+		<div class="vSpace"></div>
+		<div id="feedback" class="button2 bGrey center">Feedback</div>
+		<div class="vSpace"></div>
 	</div>
 	
 <?php
