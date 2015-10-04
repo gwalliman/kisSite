@@ -51,10 +51,10 @@ try
   {
     $num++;
     $total += $row['rating'];
-    echo('RATING:' + $row['rating'] . '<br />');
+    echo('RATING:' . $row['rating'] . '<br />');
   }
   $average = $total / $num;
-  echo('AVERAGE: ' + $average . '<br />');
+  echo('AVERAGE: ' . $average . '<br />');
 }
 catch(Exception $e)
 {
