@@ -37,7 +37,33 @@ if($launchedId != '')
 ?>
 
 <div id="chatroomListener">
-  <!--<div>You (Rating:'.$rating.')</div>-->
+  <div id="rating">
+<?php
+  <h2>Your current rating: </h2>
+try
+{
+  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+	$cases = pg_query($db, "SELECT * FROM clients");
+	$rating = pg_query($db, "SELECT * FROM ratings WHERE listener = '$listenerName'");
+  $total = 0;
+  $num = 0;
+  while($row = pg_fetch_array($rating))
+  {
+    $num++;
+    $total += $row['rating'];
+    echo('RATING:' + $row['rating'] . '<br />');
+  }
+  $average = $total / $num;
+  echo('AVERAGE: ' + $average . '<br />');
+}
+catch(Exception $e)
+{
+  echo($e);
+}
+
+
+?>
+  </div>
   <div id="cases">
     <h2>List of clients waiting to chat:</h2>
 <?php
@@ -45,9 +71,7 @@ if($launchedId != '')
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
-
   $row_num = 0;
 
 	echo '<table class="clients">';
