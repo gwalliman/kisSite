@@ -5,7 +5,7 @@ include 'header_operationKiS.php';
 try
 {
 	$db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
-	$rating = pg_exec($db, "select * from ratings");//.$_GET['listenerUserNameSignIn'])."'";
+	$rating = pg_exec($db, "select * from rating");//.$_GET['listenerUserNameSignIn'])."'";
 	$cases = pg_exec($db, "select * from clients");
 	echo	'<div id="listenerInfo" class="floatLeft">
 				<div>You (Rating:'.$rating.')</div>
