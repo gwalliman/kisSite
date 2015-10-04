@@ -74,9 +74,9 @@ input {
 		}		
 
 .button2 {
-			margin:2%;
+			/*margin:0 2% 0 2%;*/
 			padding:1%;
-			width:150px;
+			width:60%;
 			height:25px;
 			text-align:center;
 			color:#ffffff;
@@ -110,4 +110,8 @@ input {
 .chatbox{
 	border:5px blue;
 	width:78%;
+}
+
+.vSpace{
+	height:3%;
 }
