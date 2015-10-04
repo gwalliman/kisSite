@@ -12,7 +12,7 @@ foreach($_GET as $key => $value)
   {
     $launchedId = $key;
   }
-  else if($key == 'listenerUserNameSignIn' || $key == 'listenerUserName')
+  else if($key == 'listenerName' || $key == 'listenerUserNameSignIn' || $key == 'listenerUserName')
   {
     $listenerName = $value;
   }
@@ -29,8 +29,8 @@ if($launchedId != '')
   echo('RESULT 1: ' . $result);
 
   //Insert chatconnection row
-  $result = pg_prepare($db, 'removeQuery', "INSERT INTO connectedchat (id, listenername) VALUES ($1, $2)");
-  $result = pg_execute($db, 'removeQuery', array($launchedId, $listenerName));
+  $result = pg_prepare($db, 'insertQuery', "INSERT INTO connectedchat (id, listenername) VALUES ($1, $2)");
+  $result = pg_execute($db, 'insertQuery', array($launchedId, $listenerName));
   echo('RESULT 2: ' . $result);
 
   //Redirect to chat
