@@ -27,3 +27,14 @@
 #chatroomListener #cases table tr.even {
   background-color: #CCC;
 }
+
+span.stars, span.stars span {
+    display: block;
+    background: url(stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}

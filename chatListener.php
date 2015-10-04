@@ -3,6 +3,7 @@ include 'connectDB.php';
 include 'header_operationKiS.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/chatListener.css" />
+<script src="scripts/stars.js"></script>
 
 <?php
 $launchedId = '';
@@ -45,17 +46,15 @@ try
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
 	$cases = pg_query($db, "SELECT * FROM clients");
 	$rating = pg_query($db, "SELECT * FROM rating WHERE listener = '$listenerName'");
-  echo('RATING: ' . $rating);
   $total = 0;
   $num = 0;
   while($row = pg_fetch_array($rating))
   {
     $num++;
     $total += $row['rating'];
-    echo('RATING:' . $row['rating'] . '<br />');
   }
   $average = $total / $num;
-  echo('AVERAGE: ' . $average . '<br />');
+  echo('<span class="stars">' . $average . '</span'>);
 }
 catch(Exception $e)
 {
