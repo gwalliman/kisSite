@@ -14,7 +14,6 @@ try
 
   $result = pg_exec($db, "select * from ratings");
   echo('Results: ' . $result);
-
 }
 catch(Exception $e)
 {
