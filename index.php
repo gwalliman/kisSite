@@ -8,14 +8,10 @@
   if(isset($_REQUEST['submitTell']))
   {
     $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-    echo('DBUser: ' . $dbUser . '<br />');
-    echo('DB: ' . $db . '<br />');
-    echo('Txt Story: ' . $_GET['txtStory'] . '<br />');
     $id = mt_rand(100000, 999999);
     $result = pg_prepare($db, "tellQuery", "INSERT INTO clients (id, subject) VALUES ($1, $2)");
-    echo('RESULT 1: ' . $result . '<br />');
     $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
-    echo('RESULT 2: ' . $result . '<br />');
+    header("Location: ./chatStoryTeller.php");
   }
   else if(isset($_REQUEST['submitSignUp']))
   {
@@ -25,7 +21,9 @@
     echo('ListenerUserName: ' . $_GET['listenerUserName'] . '<br />');
     echo('ListenerEmail: ' . $_GET['listenerEmail'] . '<br />');
     echo('ListenerPassword: ' . $_GET['listenerPassword'] . '<br />');
- 
+    $result = pg_prepare($db, "listenSignUp", "INSERT INTO listener (name, pass, email) VALUES ($1, $2, $3)");
+    $result = pg_execute($db, "listenSignUp", array($_GET['listenerUserName'], $_GET['listenerPassword'], $_GET['listenerEmail']));
+    header("Location: ./chatListener.php");
   }
   else if(isset($_REQUEST['submitSignIn']))
   {
