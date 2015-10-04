@@ -9,7 +9,14 @@ try
 	$cases = pg_query($db, "SELECT * FROM clients");
 	echo	'<div id="listenerInfo">
 				<div>You (Rating:'.$rating.')</div>
-				<div>List of open cases:</div>
+				<div>List of open cases:';
+	echo '<ul>';
+	foreach($c as $cases)
+	{
+		echo '<li>' . $c . '</li>';
+	}
+	echo '</ul>
+				</div>
 			</div>
 			<!--div id="chatbox" class="chatbox"><h3>chatbox</h3></div>
 			<div class="stopFloat"></div-->';
