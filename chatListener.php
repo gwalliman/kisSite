@@ -12,7 +12,7 @@ try
 				<div>List of open cases:</div>
 			</div>
 			<div id="chatbox"></div>
-			<div class="stopFloat"></div>'
+			<div class="stopFloat"></div>';
 }
 catch(Exception $e)
 {
