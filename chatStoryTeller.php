@@ -3,7 +3,8 @@ include 'connectDB.php';
 include 'header_operationKiS.php';
 ?>
 <?php
-  $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
+  echo("Host: " . $dbHost);
+  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
   echo('DB: ' . $db . '<br />');
 ?>
 
