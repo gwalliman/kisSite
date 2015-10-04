@@ -2,6 +2,7 @@
 include 'connectDB.php';
 include 'header_operationKiS.php';
 ?>
+<link rel="stylesheet" type="text/css" href="css/chatListener.css" />
 
 <?php
 $launchedId = '';
@@ -47,10 +48,23 @@ try
 	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
 
+  $row_num = 0;
+
 	echo '<ul class="case_row">';
   while($row = pg_fetch_array($cases))
 	{
-		echo '<li>';
+    $row_num++;
+		echo '<li';
+    if($row_num % 2 == 0)
+    {
+      echo ' class="even"';
+    }
+    else
+    {
+      echo ' class="odd"';
+    }
+
+    echo '>';
     echo '<form class="case_row_form' . $row['id'] . '" action="chatListener.php' . $name . '">';
     echo $row['id'];
     echo ' | ';
