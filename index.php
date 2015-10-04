@@ -1,6 +1,6 @@
 <?php
-include 'header_operationKiS.php';
 include 'connectDB.php';
+include 'header_operationKiS.php';
 ?>
 
 <?php
@@ -20,17 +20,19 @@ else if(isset($_REQUEST['submitSignIn']))
 function chatStoryTeller()
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db);
-  echo('Txt Story: ' . $_GET['txtStory']);
+  echo('DBUser: ' . $dbUser . '<br />');
+  echo('DB: ' . $db . '<br />');
+  echo('Txt Story: ' . $_GET['txtStory'] . '<br />');
 }
 
 function chatListener()
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db);
-  echo('ListenerUserName: ' . $_GET['listenerUserName']);
-  echo('ListenerEmail: ' . $_GET['listenerEmail']);
-  echo('ListenerPassword: ' . $_GET['listenerPassword']);
+  echo('DBUser: ' . $dbUser . '<br />');
+  echo('DB: ' . $db . '<br />');
+  echo('ListenerUserName: ' . $_GET['listenerUserName'] . '<br />');
+  echo('ListenerEmail: ' . $_GET['listenerEmail'] . '<br />');
+  echo('ListenerPassword: ' . $_GET['listenerPassword'] . '<br />');
 }
 
 ?>
