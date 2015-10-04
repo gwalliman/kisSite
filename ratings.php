@@ -34,7 +34,7 @@ catch(Exception $e)
 
 	<div id="main" class="center">
 		<form id="tellStory" action="ratings.php" class="messageBox center">
-      Give a rating of 1 to 5 indicating your experience with your listener.
+      Please give a rating of 1 to 5 indicating your experience with your listener.
       <select name="ratingNum">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -44,6 +44,7 @@ catch(Exception $e)
       </select>
       <input name="ratingId" id="ratingId" type="hidden" value="<?php echo $_GET['id']; ?>">
 			<input name="submitRating" id="submitRating" type="submit" value="Submit" class="submit bBlue">
+      Thanks for participating!
 		</form>
 	</div>
 
