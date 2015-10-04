@@ -7,10 +7,13 @@ include 'header_operationKiS.php';
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+  echo('DB: ' . $db);
   $id = $_GET['ratingId'];
+  echo('ID: ' . $id);
 
   $select_query = "SELECT * FROM connectedchat WHERE id = $id";
   $result = pg_query($db, $select_query);
+  echo('RESULT: ' . $result);
   while($row = pg_fetch_array($result))
   {
     echo('ROW: ' . $row);
