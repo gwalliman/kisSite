@@ -13,17 +13,18 @@ foreach($_GET as $key => $value)
   }
 }
 
-if($key != '')
+echo('Launched ID: ' . $launchedId);
+if($launchedId != '')
 {
   //Remove client row
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
   $result = pg_prepare($db, 'removeQuery', 'DELETE FROM clients WHERE id = $1');
-  $result = pg_exec($db, 'removeQuery', array($key));
+  $result = pg_exec($db, 'removeQuery', array($launchedId));
 
   //Insert chatconnection row
 
   //Redirect to chat
-  //header("Location: https://kis-chatroom.herokuapp.com/chat/$key");
+  //header("Location: https://kis-chatroom.herokuapp.com/chat/$launchedId");
 }
 
 ?>
@@ -36,7 +37,6 @@ if($key != '')
 
 try
 {
-  $name = $_GET['listenerName'];
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
 	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
@@ -45,7 +45,7 @@ try
   while($row = pg_fetch_array($cases))
 	{
 		echo '<li>';
-    echo '<form id="client' . $row['id'] . '" action="chatListener.php?listenerName=' . $name . '">';
+    echo '<form id="client' . $row['id'] . '" action="chatListener.php' . $name . '">';
     echo $row['id'];
     echo ' | ';
     echo $row['subject'];
