@@ -119,4 +119,12 @@ input {
 .submit:hover{
 			background-color:#5599ee;
 			cursor:pointer;
-		}
+}
+
+.listenerInfo{
+	width:20%;
+}
+.chatbox{
+	border:5px blue;
+	width:78%;
+}

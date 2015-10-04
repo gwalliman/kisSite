@@ -1,26 +1,24 @@
 <?php
+include 'connectDB.php';
 include 'header_operationKiS.php';
-?>
-
-<?php
-$host = 'ec2-54-204-15-41.compute-1.amazonaws.com';
-$port = '5432';
-$dbname = 'd2k8bqie1ec0rk';
-$user = 'dhumuikvpxdsmu';
-$pass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
 
 try
 {
-  $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db . '<br />');
-
-  $result = pg_exec($db, "select * from clients");
-  echo('Results: ' . $result);
+	$db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
+	$rating = pg_query($db, "SELECT * FROM ratings");//.$_GET['listenerUserNameSignIn'])."'";
+	$cases = pg_query($db, "SELECT * FROM clients");
+	echo	'<div id="listenerInfo">
+				<div>You (Rating:'.$rating.')</div>
+				<div>List of open cases:</div>
+			</div>
+			<!--div id="chatbox" class="chatbox"><h3>chatbox</h3></div>
+			<div class="stopFloat"></div-->';
 }
 catch(Exception $e)
 {
-  echo($e);
+	echo($e);
 }
+
 ?>
 
 <h1>Chat interface for listener</h1>

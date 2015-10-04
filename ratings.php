@@ -1,23 +1,51 @@
 <?php
-$host = 'ec2-54-204-15-41.compute-1.amazonaws.com';
-$port = '5432';
-$dbname = 'd2k8bqie1ec0rk';
-$user = 'dhumuikvpxdsmu';
-$pass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
+include 'connectDB.php';
+include 'header_operationKiS.php';
+?>
 
+<?php
 try
 {
-  $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
-  echo('DB: ' . $db . '<br />');
-  echo('Listener: ' . $_GET['listener'] . '<br />');
-  echo('Rating: ' . $_GET['rating'] . '<br />');
+  if(isset($_REQUEST['submitRating']))
+  {
+    $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+    $id = $_GET['ratingId'];
 
-  $result = pg_exec($db, "select * from ratings");
-  echo('Results: ' . $result);
+    $select_query = "SELECT * FROM connectedchat WHERE id = '$id'";
+    $result = pg_query($db, $select_query);
+    $name = '';
+    while($row = pg_fetch_array($result))
+    {
+      $name = $row['listenername'];
+    }
+    $rating = $_GET['ratingNum'];
+    
+    $result = pg_prepare($db, "insertQuery", "INSERT INTO rating (listener, rating) VALUES ($1, $2)");
+    $result = pg_execute($db, "insertQuery", array($name, $rating));
+    header("Location: https://kis-website.herokuapp.com/");
+  }
 }
 catch(Exception $e)
 {
   echo($e);
 }
+?>
 
+	<div id="main" class="center">
+		<form id="tellStory" action="ratings.php" class="messageBox center">
+      Give a rating of 1 to 5 indicating your experience with your listener.
+      <select name="ratingNum">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input name="ratingId" id="ratingId" type="text" value="<?php echo $_GET['id']; ?>">
+			<input name="submitRating" id="submitRating" type="submit" value="Submit" class="submit bBlue">
+		</form>
+	</div>
+
+<?php
+include 'footer_operationKiS.php';
 ?>
