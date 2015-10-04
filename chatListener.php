@@ -11,11 +11,7 @@ try
 				<div>You (Rating:'.$rating.')</div>
 				<div>List of open cases:</div>
 			</div>
-<<<<<<< HEAD
 			<div id="chatbox" class="chatbox"><h3>chatbox</h3></div>
-=======
-			<div id="chatbox"><h3>chatbox</h3></div>
->>>>>>> ba935e8c0f6c0bdcb81bd9f823042a1d6ba17c97
 			<div class="stopFloat"></div>';
 }
 catch(Exception $e)
