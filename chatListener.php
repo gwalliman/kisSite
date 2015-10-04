@@ -18,23 +18,19 @@ foreach($_GET as $key => $value)
   }
 }
 
-echo('Launched ID: ' . $launchedId);
-echo('Listener Name: ' . $listenerName);
 if($launchedId != '')
 {
   //Remove client row
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
   $result = pg_prepare($db, 'removeQuery', "DELETE FROM clients WHERE id = $1");
   $result = pg_execute($db, 'removeQuery', array($launchedId));
-  echo('RESULT 1: ' . $result);
 
   //Insert chatconnection row
   $result = pg_prepare($db, 'insertQuery', "INSERT INTO connectedchat (id, listenername) VALUES ($1, $2)");
   $result = pg_execute($db, 'insertQuery', array($launchedId, $listenerName));
-  echo('RESULT 2: ' . $result);
 
   //Redirect to chat
-  //header("Location: https://kis-chatroom.herokuapp.com/chat/$launchedId");
+  header("Location: https://kis-chatroom.herokuapp.com/chat/$launchedId");
 }
 
 ?>
