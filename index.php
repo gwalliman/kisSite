@@ -28,7 +28,7 @@ include 'header_operationKiS.php';
 			Register as a Listener
 			<input id="listenerEmail" class="bGrey" placeholder="Email">
 			<input id="listenerUserName" class="bGrey" placeholder="Username">
-			<input id="listenerPassword" class="bGrey" placeholder="Password">
+			<input id="listenerPassword" type="password" class="bGrey" placeholder="Password">
 			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
 			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
