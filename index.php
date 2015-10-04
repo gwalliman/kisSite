@@ -1,5 +1,36 @@
 <?php
-include 'header_operationKiS.php';
+  include 'connectDB.php';
+  include 'header_operationKiS.php';
+?>
+
+<?php
+
+  if(isset($_REQUEST['submitTell']))
+  {
+    $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+    echo('DBUser: ' . $dbUser . '<br />');
+    echo('DB: ' . $db . '<br />');
+    echo('Txt Story: ' . $_GET['txtStory'] . '<br />');
+    $id = mt_rand(100000, 999999);
+    $result = pg_prepare($db, "tellQuery", "INSERT INTO clients (id, subject) VALUES ($1, $2)");
+    echo('RESULT 1: ' . $result . '<br />');
+    $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
+    echo('RESULT 2: ' . $result . '<br />');
+  }
+  else if(isset($_REQUEST['submitSignUp']))
+  {
+    $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+    echo('DBUser: ' . $dbUser . '<br />');
+    echo('DB: ' . $db . '<br />');
+    echo('ListenerUserName: ' . $_GET['listenerUserName'] . '<br />');
+    echo('ListenerEmail: ' . $_GET['listenerEmail'] . '<br />');
+    echo('ListenerPassword: ' . $_GET['listenerPassword'] . '<br />');
+ 
+  }
+  else if(isset($_REQUEST['submitSignIn']))
+  {
+  }
+
 ?>
 	
 	<div id="main" class="center">
@@ -12,10 +43,11 @@ include 'header_operationKiS.php';
 			<div class="stopFloat"></div>
 		</div>
 		
-		<form id="tellStory" action="chatStoryTeller.php" class="messageBox center hidden">
+		<!--<form id="tellStory" action="chatStoryTeller.php" class="messageBox center hidden">-->
+		<form id="tellStory" action="index.php" class="messageBox center hidden">
 			Tell us your story
-			<textarea id="txtStory" class="bGrey center"></textarea>
-			<input id="submitTell" type="submit" value="Submit" class="submit bBlue">
+			<textarea name="txtStory" id="txtStory" class="bGrey center"></textarea>
+			<input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
 		<div id="signInOrReg" class="messageBox center hidden">
@@ -24,21 +56,21 @@ include 'header_operationKiS.php';
 			<div id="toSignIn" class="button2 bBlue">Sign In</div>
 		</div>
 		
-		<form id="listenerSignUp" action="regListener.php" method="get" class="messageBox center hidden">
+		<form id="listenerSignUp" action="index.php" method="get" class="messageBox center hidden">
 			Register as a Listener
-			<input name="listenerEmail" class="bGrey" placeholder="Email">
-			<input name="listenerUserName" class="bGrey" placeholder="Username">
-			<input name="listenerPassword" type="password" class="bGrey" placeholder="Password">
+			<input name="listenerEmail" id="listenerEmail" class="bGrey" placeholder="Email">
+			<input name="listenerUserName" id="listenerUserName" class="bGrey" placeholder="Username">
+			<input name="listenerPassword" id="listenerPassword" type="password" class="bGrey" placeholder="Password">
 			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
-			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitSignUp" id="submitSignUp" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
 		<form id="listenerSignIn" action="chatListener.php" method="get" class="messageBox center hidden">
 			Listener Sign-in
-			<input name="listenerUserName" class="bGrey" placeholder="Username">
-			<input name="listenerPassword" class="bGrey" placeholder="Password">
+			<input name="listenerUserNameSignIn" id="listenerUserNameSignIn" class="bGrey" placeholder="Username">
+			<input name="listenerPasswordSignIn" id="listenerPasswordSignIn" class="bGrey" placeholder="Password">
 			<a href="">(Forgot password?)</a>
-			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
+			<input name="submitSignIn" id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
 	</div>
 	
