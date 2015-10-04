@@ -2,15 +2,15 @@
   text-align: center;
 }
 
-#chatroomListener #cases .case_row li { 
-  border-top: 1px solid #CCC;
-  list-style: none;
+#chatroomListener #cases table { 
+  width: 90%;
+  margin: 0px auto;
 }
 
-#chatroomListener #cases .case_row li.even { 
+#chatroomListener #cases table tr th {
+  text-align: left;
+} 
+
+#chatroomListener #cases table tr.even {
   background-color: #CCC;
-}
-
-#chatroomListener #cases .case_row .case_row_form_submit {
-  display: inline-block;
 }
