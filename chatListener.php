@@ -18,7 +18,7 @@ try
 	echo '<ul>';
   while($row = pg_fetch_array($cases))
 	{
-		echo '<li>' $row['id'] . ' | ' . $row['subject'] . '</li>';
+		echo '<li>' . $row['id'] . ' | ' . $row['subject'] . '</li>';
 	}
 	echo '</ul>';
 }
