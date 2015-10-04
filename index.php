@@ -26,17 +26,17 @@ include 'header_operationKiS.php';
 		
 		<form id="listenerSignUp" action="regListener.php" method="get" class="messageBox center hidden">
 			Register as a Listener
-			<input id="listenerEmail" class="bGrey" placeholder="Email">
-			<input id="listenerUserName" class="bGrey" placeholder="Username">
-			<input id="listenerPassword" type="password" class="bGrey" placeholder="Password">
+			<input name="listenerEmail" class="bGrey" placeholder="Email">
+			<input name="listenerUserName" class="bGrey" placeholder="Username">
+			<input name="listenerPassword" type="password" class="bGrey" placeholder="Password">
 			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
 			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
 		<form id="listenerSignIn" action="chatListener.php" method="get" class="messageBox center hidden">
 			Listener Sign-in
-			<input id="listenerUserName" class="bGrey" placeholder="Username">
-			<input id="listenerPassword" class="bGrey" placeholder="Password">
+			<input name="listenerUserName" class="bGrey" placeholder="Username">
+			<input name="listenerPassword" class="bGrey" placeholder="Password">
 			<a href="">(Forgot password?)</a>
 			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
