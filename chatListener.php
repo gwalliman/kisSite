@@ -5,11 +5,16 @@ include 'header_operationKiS.php';
 
 <?php
 $launchedId = '';
+$listenerName = '';
 foreach($_GET as $key => $value)
 {
   if($_GET[$key] == 'Launch')
   {
     $launchedId = $key;
+  }
+  else if($key == 'listenerUserNameSignIn' || $key == 'listenerUserName')
+  {
+    $listenerName = $value;
   }
 }
 
@@ -24,7 +29,7 @@ if($launchedId != '')
 
   //Insert chatconnection row
   $result = pg_prepare($db, 'removeQuery', "INSERT INTO connectedchat (id, listenername) VALUES ($1, $2)");
-  $result = pg_execute($db, 'removeQuery', array($launchedId, $_GET['listenerName']));
+  $result = pg_execute($db, 'removeQuery', array($launchedId, $listenerName));
   echo('RESULT 2: ' . $result);
 
   //Redirect to chat
@@ -54,7 +59,7 @@ try
     echo ' | ';
     echo $row['subject'];
     echo ' | ';
-    echo '<input name="listnerName" type="textfield" value="'. $_GET['listenerName'] . '">';
+    echo '<input name="listnerName" type="textfield" value="'. $_GET['listenerUserName'] . '">';
     echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
     echo '</li>';
