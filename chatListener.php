@@ -35,10 +35,10 @@ if($launchedId != '')
 
 ?>
 
-<div id="listenerInfo">
+<div id="chatroomListener">
   <!--<div>You (Rating:'.$rating.')</div>-->
-  <div>
-    List of open cases:
+  <div id="cases">
+    <h2>List of open cases:</h2>
 <?php
 
 try
@@ -47,17 +47,17 @@ try
 	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
 
-	echo '<ul>';
+	echo '<ul class="case_row">';
   while($row = pg_fetch_array($cases))
 	{
 		echo '<li>';
-    echo '<form id="client' . $row['id'] . '" action="chatListener.php' . $name . '">';
+    echo '<form class="case_row_form' . $row['id'] . '" action="chatListener.php' . $name . '">';
     echo $row['id'];
     echo ' | ';
     echo $row['subject'];
     echo ' | ';
     echo '<input name="listenerName" type="hidden" value="'. $listenerName . '">';
-    echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
+    echo '<input class="case_row_form_submit" name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
     echo '</li>';
 	}
@@ -70,7 +70,7 @@ catch(Exception $e)
 
 ?>
   </div>
-</div>';
+</div>
 
 <?php
 include 'footer_operationKiS.php';
