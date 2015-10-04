@@ -25,10 +25,10 @@ try
     echo('NAME: ' . $name . "<br />");
     $rating = $_GET['ratingNum'];
     
-    $result = pg_prepare($db, "insertQuery", "INSERT INTO ratings (listener, rating) VALUES ($1, $2)");
+    $result = pg_prepare($db, "insertQuery", "INSERT INTO rating (listener, rating) VALUES ($1, $2)");
     $result = pg_execute($db, "insertQuery", array($name, $rating));
     echo('RESULT: ' . $result . "<br />");
-    header("Location: https://kis-website.herokuapp.com/");
+    //header("Location: https://kis-website.herokuapp.com/");
   }
 }
 catch(Exception $e)
