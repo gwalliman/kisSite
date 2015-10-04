@@ -1,0 +1,22 @@
+#main {
+  padding: 40px 0;
+}
+
+#main #tellStory {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  height: auto;
+}
+
+#main #tellStory select {
+    display: block;
+    width: 70px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+#main #tellStory input#submitRating {
+  margin: 0px auto;
+}

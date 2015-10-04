@@ -2,6 +2,7 @@
 include 'connectDB.php';
 include 'header_operationKiS.php';
 ?>
+<link rel="stylesheet" type="text/css" href="css/rating.css" />
 
 <?php
 try
