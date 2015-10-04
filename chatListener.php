@@ -38,8 +38,8 @@ if($launchedId != '')
 
 <div id="chatroomListener">
   <div id="rating">
-<?php
   <h2>Your current rating: </h2>
+<?php
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
