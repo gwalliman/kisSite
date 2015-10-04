@@ -5,85 +5,126 @@ input{
 display:block;
 }
 
-#main{
-margin:0px;
-padding:1%;
-width:100%;
-font-family:Verdana, Geneva, sans-serif;
-}/*
+#margin {
+			margin:0px;
+			padding:1%;
+			width:100%;
+			font-family: Myriad Pro, Verdana, Geneva, sans-serif;
+		}
+
+/*
 #main{
 padding:5px 10px 5px 10px;
 width:800px;
-}?*/
+}?
+*/
 
-#teamName{
-margin:0px;
-padding:1%;
-width:100%;
-color:#ffffff;
-/*background-color:#ffa822;*/
-}
-#twoButton{
-width:500px;
-}
-#logoFooter{
-width:100%;
-height:100px;
-}
-#logo{
-margin:0px;
-width:100px;
-height:100px;
-/*background-color:#ffa822;*/
-}
-#txtStory{
-width:90%;
-height:200px;
+#about {
+			background-color:#ffffff;
+			padding:2%;
+
+
+
 }
 
-input{
-margin:2%;
-}
+#logo {
+			margin:0px;
+			width:100px;
+			height:100px;
+			/*background-color:#ffa822;*/
 
-.messageBox{
-padding:1%;
-width:300px;
-height:300px;
-background-color:#eeeeee;
-}
-.button1{
-margin:2%;
-padding:1%;
-width:150px;
-height:25px;
-text-align:center;
-color:#ffffff;
-float:left;
-}
-.button2{
-margin:2%;
-padding:1%;
-width:150px;
-height:25px;
-text-align:center;
-color:#ffffff;
-}
-.button1:hover, .button2:hover{
-background-color:#5599ee;
-cursor:pointer;
-}
+
+		}
+
+#logoFooter {
+			width:100%;
+			height:100px;
+			font-family: Myriad Pro, Verdana, Geneva, sans-serif;
+		}
+
+#teamName {
+			margin:0px;
+			padding:1%;
+			width:100%;
+			height: 135px;
+			color:#ffffff;
+			font-size:4em;
+			font-weight:bold;
+
+			/*background-color:#ffa822;*/
+			/*background-image: url('header.jpg')*/
+		}
+
+#twoButton {
+			width:500px;
+			height:200px;
+			padding:1%;
+
+			color:#ffffff;
+			text-align:center;
+
+		}
+
+
+
+
+
+#txtStory {
+			width:90%;
+			height:200px;
+		}
+
+input {
+		margin:2%;
+	}
+
+
+
+.button 1 {
+			margin:2%;
+			padding:1%;
+			width:150px;
+			height:25px;
+			text-align:center;
+			color:#ffffff;
+			float:left;
+		}		
+
+.button2 {
+			margin:2%;
+			padding:1%;
+			width:150px;
+			height:25px;
+			text-align:center;
+			color:#ffffff;
+		}
+
+.button1:hover, .button2:hover {
+			background-color:#8d40fd;
+			cursor:pointer;
+		}
+
+.messageBox {
+			padding:1%;
+			width:300px;
+			height:300px;
+			background-color:#eeeeee;
+		}
+
 .submit{
-width:30%;
-text-align:center;
-}
+			width:30%;
+			text-align:center;
+	}
+
 .submit:hover{
-background-color:#5599ee;
-cursor:pointer;
+			background-color:#5599ee;
+			cursor:pointer;
 }
+
 .listenerInfo{
-width:20%;
+	width:20%;
 }
 .chatbox{
-border:5px blue;
-width:78%;
+	border:5px blue;
+	width:78%;
 }
