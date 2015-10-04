@@ -1,0 +1,16 @@
+#chatroomListener h2 {
+  text-align: center;
+}
+
+#chatroomListener #cases .case_row li { 
+  border-top: 1px solid #CCC;
+  list-style: none;
+}
+
+#chatroomListener #cases .case_row li.even { 
+  background-color: #CCC;
+}
+
+#chatroomListener #cases .case_row .case_row_form_submit {
+  display: inline-block;
+}
