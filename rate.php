@@ -7,7 +7,7 @@ $pass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
 
 try
 {
-  $result = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'")u
+  $result = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
   echo($result);
 }
 catch(Exception $e)
