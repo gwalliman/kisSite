@@ -96,7 +96,7 @@ input[type="text"] {
 .messageBox {
 			padding:1%;
 			width:90%;
-			height:175px;
+			height: auto;
 			background-color:#eeeeee;
 		}
 
