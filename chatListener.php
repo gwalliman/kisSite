@@ -23,6 +23,9 @@ if($launchedId != '')
   echo('RESULT 1: ' . $result);
 
   //Insert chatconnection row
+  $result = pg_prepare($db, 'removeQuery', "INSERT INTO connectedchat (id, listenername) VALUES ($1, $2)");
+  $result = pg_execute($db, 'removeQuery', array($launchedId, $_GET['listenerName']));
+  echo('RESULT 2: ' . $result);
 
   //Redirect to chat
   //header("Location: https://kis-chatroom.herokuapp.com/chat/$launchedId");
@@ -51,6 +54,7 @@ try
     echo ' | ';
     echo $row['subject'];
     echo ' | ';
+    echo '<input name="listnerName" type="textfield" value="'. $_GET['listenerName'] . '">';
     echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
     echo '</li>';
