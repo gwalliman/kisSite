@@ -4,7 +4,6 @@
 ?>
 
 <?php
-
   if(isset($_REQUEST['submitTell']))
   {
     $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
@@ -30,7 +29,6 @@
   {
     header("Location: ./chatListener.php?username=" . $_GET['listenerUserNameSignIn']);
   }
-
 ?>
 	
 	<div id="main" class="center">
