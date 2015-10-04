@@ -19,6 +19,7 @@ foreach($_GET as $key => $value)
 }
 
 echo('Launched ID: ' . $launchedId);
+echo('Listener Name: ' . $listenerName);
 if($launchedId != '')
 {
   //Remove client row
@@ -59,7 +60,7 @@ try
     echo ' | ';
     echo $row['subject'];
     echo ' | ';
-    echo '<input name="listnerName" type="textfield" value="'. $_GET['listenerUserName'] . '">';
+    echo '<input name="listnerName" type="textfield" value="'. $listenerName . '">';
     echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
     echo '</li>';
