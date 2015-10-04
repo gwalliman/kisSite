@@ -44,7 +44,8 @@ try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
 	$cases = pg_query($db, "SELECT * FROM clients");
-	$rating = pg_query($db, "SELECT * FROM ratings WHERE listener = '$listenerName'");
+	$rating = pg_query($db, "SELECT * FROM rating WHERE listener = '$listenerName'");
+  echo('RATING: ' . $rating);
   $total = 0;
   $num = 0;
   while($row = pg_fetch_array($rating))
