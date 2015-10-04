@@ -28,7 +28,7 @@
 			<div id="tellStory" class="center hidden">
 				Tell us your story
 				</div id="txtStory" class="bGrey">
-					
+					haha
 				</div>
 				<div id="Submit" class="floatRight">Submit</div>
 			</div>
