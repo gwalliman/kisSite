@@ -50,11 +50,12 @@ try
 
   $row_num = 0;
 
-	echo '<ul class="case_row">';
+	echo '<table class="clients">';
+  echo '<tr><th>Id</th><th>Chat Subject</th><th>Launch Chat</th></tr>';
   while($row = pg_fetch_array($cases))
 	{
     $row_num++;
-		echo '<li';
+    echo '<tr';
     if($row_num % 2 == 0)
     {
       echo ' class="even"';
@@ -65,17 +66,17 @@ try
     }
 
     echo '>';
+    echo '<td>' . $row['id'] . '</td>';
+    echo '<td>' . $row['subject'] . '</td>';
+    echo '<td>';
     echo '<form class="case_row_form' . $row['id'] . '" action="chatListener.php' . $name . '">';
-    echo $row['id'];
-    echo ' | ';
-    echo $row['subject'];
-    echo ' | ';
     echo '<input name="listenerName" type="hidden" value="'. $listenerName . '">';
     echo '<input class="case_row_form_submit" name="' . $row['id'] . '" type="submit" value="Launch">';
     echo '</form>';
-    echo '</li>';
+    echo '</td>';
+    echo '</tr>';
 	}
-	echo '</ul>';
+	echo '</table>';
 }
 catch(Exception $e)
 {

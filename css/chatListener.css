@@ -1,3 +1,7 @@
+#chatroomListener h2 {
+  text-align: center;
+}
+
 #chatroomListener #cases .case_row li { 
   border-top: 1px solid #CCC;
   list-style: none;
