@@ -10,7 +10,6 @@
     $id = mt_rand(100000, 999999);
     $result = pg_prepare($db, "tellQuery", "INSERT INTO clients (id, subject) VALUES ($1, $2)");
     $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
-    //header("Location: ./chatStoryTeller.php");
     header("Location: https://kis-chatroom.herokuapp.com/chat/$id");
   }
   else if(isset($_REQUEST['submitSignUp']))
