@@ -1,11 +1,6 @@
 <?php
   include 'connectDB.php';
   include 'header_operationKiS.php';
-  /*$dbHost = 'ec2-54-204-15-41.compute-1.amazonaws.com';
-  $dbPort = '5432';
-  $dbName = 'd2k8bqie1ec0rk';
-  $dbUser = 'dhumuikvpxdsmu';
-  $dbPass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';*/
 ?>
 
 <?php
@@ -16,7 +11,11 @@
     echo('DBUser: ' . $dbUser . '<br />');
     echo('DB: ' . $db . '<br />');
     echo('Txt Story: ' . $_GET['txtStory'] . '<br />');
- 
+    $id = mt_rand(100000, 999999);
+    $result = pg_prepare($db, "tellQuery", "INSERT INTO clients (id, subject) VALUES ($1, $2)");
+    echo('RESULT 1: ' . $result . '<br />');
+    $result = pg_execute($db, "tellQuery", array($id, $_GET['txtStory']));
+    echo('RESULT 2: ' . $result . '<br />');
   }
   else if(isset($_REQUEST['submitSignUp']))
   {
