@@ -24,7 +24,7 @@ include 'header_operationKiS.php';
 			<div id="toSignIn" class="button2 bBlue">Sign In</div>
 		</div>
 		
-		<form id="listenerSignUp" action="regListener.php" class="messageBox center hidden">
+		<form id="listenerSignUp" action="regListener.php" method="get" class="messageBox center hidden">
 			Register as a Listener
 			<input id="listenerEmail" class="bGrey" placeholder="Email">
 			<input id="listenerUserName" class="bGrey" placeholder="Username">
@@ -33,7 +33,7 @@ include 'header_operationKiS.php';
 			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
-		<form id="listenerSignIn" action="chatListener.php" class="messageBox center hidden">
+		<form id="listenerSignIn" action="chatListener.php" method="get" class="messageBox center hidden">
 			Listener Sign-in
 			<input id="listenerUserName" class="bGrey" placeholder="Username">
 			<input id="listenerPassword" class="bGrey" placeholder="Password">
