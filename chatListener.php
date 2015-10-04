@@ -1,25 +1,62 @@
 <?php
 include 'connectDB.php';
 include 'header_operationKiS.php';
+?>
+
+<?php
+$launchedId = '';
+foreach($_GET as $key => $value)
+{
+  if($_GET[$key] == 'Launch')
+  {
+    $launchedId = $key;
+  }
+}
+
+echo('Launched ID: ' . $launchedId);
+if($launchedId != '')
+{
+  //Remove client row
+  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+  $result = pg_prepare($db, 'removeQuery', "DELETE FROM clients WHERE id = '$1'");
+  echo('RESULT 1: ' . $result);
+  $result = pg_execute($db, 'removeQuery', array($launchedId));
+  echo('RESULT 2: ' . $result);
+
+  //Insert chatconnection row
+
+  //Redirect to chat
+  //header("Location: https://kis-chatroom.herokuapp.com/chat/$launchedId");
+}
+
+?>
+
+<div id="listenerInfo">
+  <!--<div>You (Rating:'.$rating.')</div>-->
+  <div>
+    List of open cases:
+<?php
 
 try
 {
-	$db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass sslmode=require options='--client_encoding=UTF8'");
-	$rating = pg_query($db, "SELECT * FROM ratings");//.$_GET['listenerUserNameSignIn'])."'";
+  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
-	echo	'<div id="listenerInfo">
-				<div>You (Rating:'.$rating.')</div>
-				<div>List of open cases:';
+
 	echo '<ul>';
-	foreach($c as $cases)
+  while($row = pg_fetch_array($cases))
 	{
-		echo '<li>' . $c . '</li>';
+		echo '<li>';
+    echo '<form id="client' . $row['id'] . '" action="chatListener.php' . $name . '">';
+    echo $row['id'];
+    echo ' | ';
+    echo $row['subject'];
+    echo ' | ';
+    echo '<input name="' . $row['id'] . '" type="submit" value="Launch">';
+    echo '</form>';
+    echo '</li>';
 	}
-	echo '</ul>
-				</div>
-			</div>
-			<!--div id="chatbox" class="chatbox"><h3>chatbox</h3></div>
-			<div class="stopFloat"></div-->';
+	echo '</ul>';
 }
 catch(Exception $e)
 {
@@ -27,8 +64,8 @@ catch(Exception $e)
 }
 
 ?>
-
-<h1>Chat interface for listener</h1>
+  </div>
+</div>';
 
 <?php
 include 'footer_operationKiS.php';
