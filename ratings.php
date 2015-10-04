@@ -9,26 +9,20 @@ try
   if(isset($_REQUEST['submitRating']))
   {
     $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-    echo('DB: ' . $db . "<br />");
     $id = $_GET['ratingId'];
-    echo('ID: ' . $id . "<br />");
 
     $select_query = "SELECT * FROM connectedchat WHERE id = '$id'";
     $result = pg_query($db, $select_query);
-    echo('RESULT: ' . $result . "<br />");
     $name = '';
     while($row = pg_fetch_array($result))
     {
       $name = $row['listenername'];
-      echo('ROW: ' . $row['listenername'] . "<br />");
     }
-    echo('NAME: ' . $name . "<br />");
     $rating = $_GET['ratingNum'];
     
     $result = pg_prepare($db, "insertQuery", "INSERT INTO rating (listener, rating) VALUES ($1, $2)");
     $result = pg_execute($db, "insertQuery", array($name, $rating));
-    echo('RESULT: ' . $result . "<br />");
-    //header("Location: https://kis-website.herokuapp.com/");
+    header("Location: https://kis-website.herokuapp.com/");
   }
 }
 catch(Exception $e)
