@@ -1,0 +1,32 @@
+@import 'common.css';
+
+#main h2{
+text-align:center;
+}
+
+#teamName{
+margin:0px;
+padding:5px 10px 5px 10px;
+width:98.5%;
+/*background-color:#ffa822;*/
+}
+#logo{
+margin:0px;
+padding:5px 10px 5px 10px;
+width:100px;
+height:100px;
+/*background-color:#ffa822;*/
+}
+#tellStory{
+margin:0px;
+padding:5px 10px 5px 10px;
+width:300px;
+height:300px;
+}
+
+.button{
+margin:2%;
+width:20%;
+height:10%;
+}
+
