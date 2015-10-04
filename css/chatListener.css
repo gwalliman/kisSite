@@ -2,15 +2,51 @@
   text-align: center;
 }
 
-#chatroomListener #cases .case_row li { 
-  border-top: 1px solid #CCC;
-  list-style: none;
+#chatroomListener #cases table { 
+  width: 90%;
+  margin: 0px auto;
 }
 
-#chatroomListener #cases .case_row li.even { 
+#chatroomListener #cases table tr th {
+  text-align: left;
+} 
+
+#chatroomListener #cases table tr.header {
+  background-color: #666;
+}
+
+#chatroomListener #cases table tr.header th {
+  padding: 10px;
+  color: #FFF;
+}
+
+#chatroomListener #cases table tr td {
+  padding: 10px;
+}
+
+#chatroomListener #cases table tr.even {
   background-color: #CCC;
 }
 
-#chatroomListener #cases .case_row .case_row_form_submit {
-  display: inline-block;
+#chatroomListener #cases .empty {
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+  padding: 40px;
+  font-style: italic;
+}
+
+span.stars {
+  margin: 0px auto;
+}
+
+span.stars, span.stars span {
+    display: block;
+    background: url(stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
 }

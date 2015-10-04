@@ -3,6 +3,7 @@ include 'connectDB.php';
 include 'header_operationKiS.php';
 ?>
 <link rel="stylesheet" type="text/css" href="css/chatListener.css" />
+<script src="scripts/stars.js"></script>
 
 <?php
 $launchedId = '';
@@ -37,21 +38,44 @@ if($launchedId != '')
 ?>
 
 <div id="chatroomListener">
-  <!--<div>You (Rating:'.$rating.')</div>-->
+  <div id="rating">
+  <h2>Your current rating: </h2>
+<?php
+try
+{
+  $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
+	$cases = pg_query($db, "SELECT * FROM clients");
+	$rating = pg_query($db, "SELECT * FROM rating WHERE listener = '$listenerName'");
+  $total = 0;
+  $num = 0;
+  while($row = pg_fetch_array($rating))
+  {
+    $num++;
+    $total += $row['rating'];
+  }
+  $average = $total / $num;
+  echo('<span class="stars">' . $average . '</span>');
+}
+catch(Exception $e)
+{
+  echo($e);
+}
+
+
+?>
+  </div>
   <div id="cases">
-    <h2>List of open cases:</h2>
+    <h2>List of clients waiting to chat:</h2>
 <?php
 
 try
 {
   $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
-	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
-
   $row_num = 0;
 
 	echo '<table class="clients">';
-  echo '<tr><th>Id</th><th>Chat Subject</th><th>Launch Chat</th></tr>';
+  echo '<tr class="header"><th>Id</th><th>Chat Subject</th><th>Launch Chat</th></tr>';
   while($row = pg_fetch_array($cases))
 	{
     $row_num++;
@@ -77,6 +101,10 @@ try
     echo '</tr>';
 	}
 	echo '</table>';
+  if($row_num == 0)
+  {
+    echo '<div class="empty">There are no clients waiting to chat</div>';
+  }
 }
 catch(Exception $e)
 {
