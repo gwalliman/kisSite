@@ -54,7 +54,7 @@ try
     $total += $row['rating'];
   }
   $average = $total / $num;
-  echo('<span class="stars">' . $average . '</span'>);
+  echo('<span class="stars">' . $average . '</span>');
 }
 catch(Exception $e)
 {
