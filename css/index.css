@@ -1,7 +1,7 @@
 @import 'common.css';
 
-#main h2{
-text-align:center;
+input{
+display:block;
 }
 
 #teamName{
@@ -17,7 +17,7 @@ width:100px;
 height:100px;
 /*background-color:#ffa822;*/
 }
-#tellStory{
+#tellStory, #listenerSignIn{
 margin:0px;
 padding:5px 10px 5px 10px;
 width:300px;
