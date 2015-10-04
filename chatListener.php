@@ -15,10 +15,24 @@ try
 	$rating = pg_query($db, "SELECT * FROM ratings");
 	$cases = pg_query($db, "SELECT * FROM clients");
 
+  <form id="tellStory" action="index.php" class="messageBox center hidden">
+    Tell us your story
+    <textarea name="txtStory" id="txtStory" class="bGrey center"></textarea>
+    <input name="submitTell" id="submitTell" type="submit" value="Submit" class="submit bBlue">
+  </form>
+
 	echo '<ul>';
   while($row = pg_fetch_array($cases))
 	{
-		echo '<li>' . $row['id'] . ' | ' . $row['subject'] . '</li>';
+		echo '<li>';
+    echo '<form id="client' . $row['id'] . '" action="chatListener.php">';
+    echo $row['id'];
+    echo ' | ';
+    echo $row['subject'];
+    echo ' | ';
+    echo '<input name="submit' . $row['id'] . '" type="submit" value="Launch">';
+    echo '</form>';
+    echo '</li>';
 	}
 	echo '</ul>';
 }
