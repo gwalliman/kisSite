@@ -51,7 +51,7 @@ try
   $row_num = 0;
 
 	echo '<table class="clients">';
-  echo '<tr><th>Id</th><th>Chat Subject</th><th>Launch Chat</th></tr>';
+  echo '<tr class="header"><th>Id</th><th>Chat Subject</th><th>Launch Chat</th></tr>';
   while($row = pg_fetch_array($cases))
 	{
     $row_num++;

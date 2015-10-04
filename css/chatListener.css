@@ -11,6 +11,19 @@
   text-align: left;
 } 
 
+#chatroomListener #cases table tr.header {
+  background-color: #666;
+}
+
+#chatroomListener #cases table tr.header th {
+  padding: 10px;
+  color: #FFF;
+}
+
+#chatroomListener #cases table tr td {
+  padding: 10px;
+}
+
 #chatroomListener #cases table tr.even {
   background-color: #CCC;
 }
