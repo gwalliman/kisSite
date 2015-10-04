@@ -1,0 +1,7 @@
+<?php
+$host = 'ec2-54-204-15-41.compute-1.amazonaws.com';
+$port = '5432';
+$dbname = 'd2k8bqie1ec0rk';
+$user = 'dhumuikvpxdsmu';
+$pass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
+?>

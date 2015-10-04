@@ -29,7 +29,7 @@ include 'header_operationKiS.php';
 			<input id="listenerEmail" class="bGrey" placeholder="Email">
 			<input id="listenerUserName" class="bGrey" placeholder="Username">
 			<input id="listenerPassword" class="bGrey" placeholder="Password">
-			<input type="check">I have read and agreed to the Terms of use.</br>
+			<input type="checkbox">I have read and agreed to the <a href="">Terms of use</a>
 			<input id="submitSignIn" type="submit" value="Submit" class="submit bBlue">
 		</form>
 		
