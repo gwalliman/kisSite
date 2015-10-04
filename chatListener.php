@@ -39,7 +39,7 @@ if($launchedId != '')
 <div id="chatroomListener">
   <!--<div>You (Rating:'.$rating.')</div>-->
   <div id="cases">
-    <h2>List of open cases:</h2>
+    <h2>List of clients waiting to chat:</h2>
 <?php
 
 try
