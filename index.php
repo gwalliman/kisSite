@@ -1,36 +1,24 @@
 <?php
   include 'connectDB.php';
   include 'header_operationKiS.php';
-  $dbHost = 'ec2-54-204-15-41.compute-1.amazonaws.com';
+  /*$dbHost = 'ec2-54-204-15-41.compute-1.amazonaws.com';
   $dbPort = '5432';
   $dbName = 'd2k8bqie1ec0rk';
   $dbUser = 'dhumuikvpxdsmu';
-  $dbPass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';
+  $dbPass = 'NM5Twg9CM4QFsjynlz_3M1PFhz';*/
 ?>
 
 <?php
 
   if(isset($_REQUEST['submitTell']))
   {
-    chatStoryTeller();
-  }
-  else if(isset($_REQUEST['submitSignUp']))
-  {
-    chatListener();
-  }
-  else if(isset($_REQUEST['submitSignIn']))
-  {
-  }
-
-  function chatStoryTeller()
-  {
     $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
     echo('DBUser: ' . $dbUser . '<br />');
     echo('DB: ' . $db . '<br />');
     echo('Txt Story: ' . $_GET['txtStory'] . '<br />');
+ 
   }
-
-  function chatListener()
+  else if(isset($_REQUEST['submitSignUp']))
   {
     $db = pg_connect("host=$dbHost port=$dbPort dbname=$dbName user=$dbUser password=$dbPass sslmode=require options='--client_encoding=UTF8'");
     echo('DBUser: ' . $dbUser . '<br />');
@@ -38,6 +26,10 @@
     echo('ListenerUserName: ' . $_GET['listenerUserName'] . '<br />');
     echo('ListenerEmail: ' . $_GET['listenerEmail'] . '<br />');
     echo('ListenerPassword: ' . $_GET['listenerPassword'] . '<br />');
+ 
+  }
+  else if(isset($_REQUEST['submitSignIn']))
+  {
   }
 
 ?>
