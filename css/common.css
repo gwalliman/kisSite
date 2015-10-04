@@ -24,6 +24,11 @@ float:left;
 body{
 margin:0px;
 padding:0px;
+width:98%;
+font-family:Verdana, Geneva, sans-serif;
+}
+.pad1{
+padding:1%;
 }
 .floatLeft{
 float:left;
@@ -37,6 +42,9 @@ clear:both;
 /*-- End of General style --*/
 
 /*-- Color Scheme --*/
+.txtWhite{
+color:#ffffff;
+}
 .bOrange{
 background-color:#ffc933;
 }
@@ -54,29 +62,3 @@ background-color:#dddddd;
 }
 /*-- End of Color Scheme --*/
 
-
-#userBar #sLogo{
-margin:0;
-width:50%;
-display:inline;
-}
-#userBar #uControl{
-margin:0;
-width:50%;
-display:inline;
-}
-#userBar #uControl div{
-margin:0;
-padding:0px 5px 0px 5px;
-border-left:1px dotted #ffc933;
-/*border-right:1px dotted #ffffff;*/
-display:inline;
-float:right;
-}
-
-#main{
-margin:0px;
-padding:0px;
-width:100%;
-font-family:Verdana, Geneva, sans-serif;
-}/*?*/

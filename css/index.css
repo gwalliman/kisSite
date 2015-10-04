@@ -5,14 +5,29 @@ display:block;
 }
 
 #main{
+margin:0px;
+padding:1%;
+width:100%;
+font-family:Verdana, Geneva, sans-serif;
+}/*
+#main{
 padding:5px 10px 5px 10px;
-width:80%;
-}
+width:800px;
+}?*/
 
 #teamName{
 margin:0px;
-width:98.5%;
+padding:1%;
+width:100%;
+color:#ffffff;
 /*background-color:#ffa822;*/
+}
+#twoButton{
+width:500px;
+}
+#logoFooter{
+width:100%;
+height:100px;
 }
 #logo{
 margin:0px;
@@ -38,10 +53,12 @@ padding:1%;
 width:150px;
 height:25px;
 text-align:center;
+color:#ffffff;
 float:left;
 }
 .button1:hover{
 background-color:#5599ee;
+cursor:pointer;
 }
 .submit{
 width:30%;
@@ -49,4 +66,5 @@ text-align:center;
 }
 .submit:hover{
 background-color:#5599ee;
+cursor:pointer;
 }
