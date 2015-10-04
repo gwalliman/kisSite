@@ -27,6 +27,11 @@
 		}
 
 #teamName {
+      font-family: 'Amaranth', sans-serif;
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 0px;
+      font-style: italic;
 			margin:0px;
 			padding:1%;
 			width:100%;

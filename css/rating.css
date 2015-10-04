@@ -18,5 +18,6 @@
 }
 
 #main #tellStory input#submitRating {
-  margin: 0px auto;
+  display: block;
+  margin: 20px auto;
 }

@@ -8,6 +8,7 @@
 	<style></style>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="scripts/index.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Amaranth:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
