@@ -6,7 +6,10 @@ display:none;
 margin-left:auto;
 margin-right:auto;
 }
-.alignR{
+.textCenter{
+text-align:center;
+}
+.textRight{
 text-align:right;
 }
 .w30{
@@ -22,8 +25,14 @@ body{
 margin:0px;
 padding:0px;
 }
+.floatLeft{
+float:left;
+}
 .floatRight{
 float:right;
+}
+.stopFloat{
+clear:both;
 }
 /*-- End of General style --*/
 
