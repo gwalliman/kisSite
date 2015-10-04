@@ -28,6 +28,14 @@
   background-color: #CCC;
 }
 
+#chatroomListener #cases .empty {
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+  padding: 40px;
+  font-style: italic;
+}
+
 span.stars {
   margin: 0px auto;
 }
