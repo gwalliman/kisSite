@@ -11,12 +11,12 @@ try
 				<div>You (Rating:'.$rating.')</div>
 				<div>List of open cases:</div>
 			</div>
-			<div id="chatbox"></div>
-			<div class="stopFloat"></div>'
+			<div id="chatbox" class="chatbox"><h3>chatbox</h3></div>
+			<div class="stopFloat"></div>';
 }
 catch(Exception $e)
 {
-  echo($e);
+	echo($e);
 }
 
 ?>
