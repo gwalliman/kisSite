@@ -41,7 +41,7 @@ catch(Exception $e)
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <input name="ratingId" id="ratingId" type="text" value="<?php echo $_GET['id']; ?>">
+      <input name="ratingId" id="ratingId" type="hidden" value="<?php echo $_GET['id']; ?>">
 			<input name="submitRating" id="submitRating" type="submit" value="Submit" class="submit bBlue">
 		</form>
 	</div>
