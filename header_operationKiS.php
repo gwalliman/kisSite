@@ -11,6 +11,6 @@
 </head>
 
 <body>
-	<div id="teamName" class="bBlue">
+	<div id="teamName" class="bGrey">
 		Operation KiS
 	</div>

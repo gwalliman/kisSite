@@ -38,6 +38,7 @@ float:left;
 }
 .floatRight{
 float:right;
+text-align:right;
 }
 .stopFloat{
 clear:both;
@@ -61,7 +62,11 @@ background-color:#5588ee;
 background-color:#ff3311;
 }
 .bGrey{
-background-color:#dddddd;
+background-color:#42425a;
 }
+.bPurple{
+	background-color:#5599ee;
+}
+
 /*-- End of Color Scheme --*/
 

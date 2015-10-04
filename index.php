@@ -7,8 +7,8 @@ include 'header_operationKiS.php';
 			Welcome to our site where if you need to be heard then we are here to listen. Here is a brief summary of what this site is all about. Depending on the purpose of your visit will determine which button you will click. So simple!
 		</div>
 		<div id="twoButton" class="center">
-			<div id="tell" class="button1 bBlue">I need to be heard</div>
-			<div id="listen" class="button1 bBlue">I am here to listen</div>
+			<div id="tell" class="button1 bGrey">I need to be heard</div>
+			<div id="listen" class="button1 bGrey">I am here to listen</div>
 			<div class="stopFloat"></div>
 		</div>
 		
